@@ -17,8 +17,6 @@ end
 
 after_initialize do
   DiscourseEvent.on(:post_cooked) do |doc, post|
-    doc.css('div.cooked').each do |div|
-      div['class'] += ' heti'
-    end
+    doc.css("div.cooked").each { |div| div["class"] += " heti" }
   end
 end
