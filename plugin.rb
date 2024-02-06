@@ -11,6 +11,10 @@ enabled_site_setting :heti_enabled
 
 register_asset "javascripts/discourse/initializers/initialize-heti.js"
 
+module ::DiscourseHeti
+  PLUGIN_NAME = "discourse-heti"
+end
+
 after_initialize do
   DiscourseEvent.on(:post_cooked) do |doc, post|
     doc.css('div.cooked').each do |div|
