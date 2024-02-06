@@ -14,8 +14,5 @@ module ::DiscourseHeti
 end
 
 after_initialize do
-  DiscourseEvent.on(:post_cooked) do |doc, post|
-    next unless SiteSetting.heti_enabled
-    doc.css("div.cooked").each { |div| div["class"] += " heti" }
-  end
+  # Code which should run after Rails has finished booting
 end
