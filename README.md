@@ -1,5 +1,5 @@
-# **Plugin Name** Plugin
+# Discourse Heti Plugin
 
 **Plugin Summary**
 
-For more information, please see: **url to meta topic**
+Integrate Heti styling and functionality into Discourse.

@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
-# name: discourse-plugin-name
-# about: TODO
-# meta_topic_id: TODO
-# version: 0.0.1
-# authors: Discourse
-# url: TODO
+# name: discourse-heti
+# about: Integrate Heti styling and functionality into Discourse.
+# version: 1.0.0
+# authors: TreeNewBee
+# url: https://github.com/TheTNB/discourse-heti
 # required_version: 2.7.0
 
-enabled_site_setting :plugin_name_enabled
+enabled_site_setting :heti_enabled
 
-module ::MyPluginModule
-  PLUGIN_NAME = "discourse-plugin-name"
-end
-
-require_relative "lib/my_plugin_module/engine"
+register_asset "javascripts/discourse/initializers/initialize-heti.js"
 
 after_initialize do
-  # Code which should run after Rails has finished booting
+  DiscourseEvent.on(:post_cooked) do |doc, post|
+    doc.css('div.cooked').each do |div|
+      div['class'] += ' heti'
+    end
+  end
 end

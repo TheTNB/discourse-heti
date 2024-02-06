@@ -1,5 +1,12 @@
 {
+  "name": "discourse-heti",
+  "version": "1.0.0",
   "private": true,
+  "author": "树新蜂",
+  "license": "MIT",
+  "dependencies": {
+    "heti": "^0.9.4"
+  },
   "devDependencies": {
     "@discourse/lint-configs": "^1.3.5",
     "ember-template-lint": "^5.13.0",
