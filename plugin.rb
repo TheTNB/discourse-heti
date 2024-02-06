@@ -7,7 +7,7 @@
 # url: https://github.com/TheTNB/discourse-heti
 # required_version: 2.7.0
 
-enabled_site_setting :heti_enabled
+enabled_site_setting :discourse_heti_enabled
 
 module ::DiscourseHeti
   PLUGIN_NAME = "discourse-heti"
@@ -15,6 +15,7 @@ end
 
 after_initialize do
   DiscourseEvent.on(:post_cooked) do |doc, post|
+    next unless SiteSetting.heti_enabled
     doc.css("div.cooked").each { |div| div["class"] += " heti" }
   end
 end
