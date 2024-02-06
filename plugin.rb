@@ -9,8 +9,6 @@
 
 enabled_site_setting :heti_enabled
 
-register_asset "javascripts/discourse/initializers/initialize-heti.js"
-
 module ::DiscourseHeti
   PLUGIN_NAME = "discourse-heti"
 end
