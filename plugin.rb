@@ -11,6 +11,8 @@ module ::DiscourseHeti
   PLUGIN_NAME = "discourse-heti"
 end
 
+register_asset "stylesheets/heti.min.css"
+
 after_initialize do
   # Code which should run after Rails has finished booting
 end
