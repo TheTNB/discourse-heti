@@ -1,4 +1,0 @@
-discourse_heti:
-  discourse_heti_enabled:
-    default: true
-    client: true
