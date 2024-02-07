@@ -15,10 +15,9 @@ export default {
   name: "initialize-heti",
   initialize() {
     withPluginApi("0.8.31", (api) => {
-      api.onPageChange(() => {
+      api.onAppEvent("inserted-custom-html:footer", () => {
         initializeHeti();
       });
-      initializeHeti();
     });
   },
 };
