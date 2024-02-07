@@ -2,7 +2,7 @@
 // Description: define variables, alias etc.
 
 // 定义赫蹏根 class 名
-$root-selector: '.heti' !default;
+$root-selector: ".heti" !default;
 $darkmode: true !default; // true | false | 'manual'
 $manualmode-auto-selector: '[data-darkmode="auto"] &' !default;
 $manualmode-dark-selector: '[data-darkmode="dark"] &' !default;
@@ -18,9 +18,12 @@ $_font-stack-symbol: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !d
 $font-family-hei: $_font-stack-sans, "Heti Hei", sans-serif, $_font-stack-symbol !default;
 $font-family-song: $_font-stack-serif, "Heti Song", serif, $_font-stack-symbol !default;
 $font-family-kai: $_font-stack-serif, "Heti Kai", serif, $_font-stack-symbol !default;
-$font-family-hei-black: $_font-stack-sans, "Heti Hei Black", sans-serif, $_font-stack-symbol !default;
-$font-family-song-black: $_font-stack-serif, "Heti Song Black", serif, $_font-stack-symbol !default;
-$font-family-kai-black: $_font-stack-serif, "Heti Kai Black", serif, $_font-stack-symbol !default;
+$font-family-hei-black: $_font-stack-sans, "Heti Hei Black", sans-serif,
+  $_font-stack-symbol !default;
+$font-family-song-black: $_font-stack-serif, "Heti Song Black", serif,
+  $_font-stack-symbol !default;
+$font-family-kai-black: $_font-stack-serif, "Heti Kai Black", serif,
+  $_font-stack-symbol !default;
 $font-family-mono: $_font-stack-mono, monospace, $_font-stack-symbol !default;
 
 // 字重 Font Weights
@@ -91,16 +94,16 @@ $text-indent-size: $font-size-normal * 2 !default;
 $chinese-quote-presets: (
   "cn": (
     "horizontal": "“" "”" "‘" "’",
-    "vertical": "『" "』" "「" "」"
+    "vertical": "『" "』" "「" "」",
   ),
   "tw": (
     "horizontal": "「" "」" "『" "』",
-    "vertical": "「" "」" "『" "』"
+    "vertical": "「" "」" "『" "』",
   ),
   "common": (
     "horizontal": "「" "」" "『" "』",
-    "vertical": "「" "」" "『" "』"
-  )
+    "vertical": "「" "」" "『" "』",
+  ),
 ) !default;
 
 $chinese-quote-set: "common" !default;
@@ -108,7 +111,17 @@ $chinese-quote-set: "common" !default;
 // 栏 Columns
 // 分栏
 $column-count-list: (1, 2, 3, 4) !default;
-$column-width-list: (16em, 20em, 24em, 28em, 32em, 36em, 40em, 44em, 48em) !default;
+$column-width-list: (
+  16em,
+  20em,
+  24em,
+  28em,
+  32em,
+  36em,
+  40em,
+  44em,
+  48em
+) !default;
 
 // 开发用配置项 Develop Configs
 /// 预设重置方案
@@ -145,9 +158,13 @@ $_css-reset-scheme: "reset";
   text-indent: 0;
 }
 
-@mixin darkmode-style($darkmode: $darkmode, $dark-selector: $manualmode-dark-selector, $auto-selector: $manualmode-auto-selector) {
+@mixin darkmode-style(
+  $darkmode: $darkmode,
+  $dark-selector: $manualmode-dark-selector,
+  $auto-selector: $manualmode-auto-selector
+) {
   // 'manual' darkmode should provide darkmode selector and auto-darkmode selector
-  @if $darkmode == 'manual' {
+  @if $darkmode == "manual" {
     #{$dark-selector} {
       @content;
     }
@@ -167,7 +184,7 @@ $_css-reset-scheme: "reset";
 // 函数 Functions
 // Function: batch prefix/suffix list-item
 // batch-fix-list((2, 3), '#{$root-selector}--columns-') => (.heti--columns-2, .heti--columns-3)
-@function batch-fix-list($list, $prefix: '', $suffix: '') {
+@function batch-fix-list($list, $prefix: "", $suffix: "") {
   $_list: () !default;
 
   @each $item in $list {

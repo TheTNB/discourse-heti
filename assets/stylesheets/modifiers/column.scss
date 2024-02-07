@@ -4,7 +4,10 @@
 
 @mixin hetiColumnModifier {
   // 定义多栏排版
-  $selector-list: batch-fix-list(join($column-count-list, $column-width-list), '&--columns-');
+  $selector-list: batch-fix-list(
+    join($column-count-list, $column-width-list),
+    "&--columns-"
+  );
 
   #{join($selector-list, comma)} {
     // 多行时不再设总宽度限制
