@@ -7,11 +7,9 @@ export default {
   name: "initialize-heti",
   initialize() {
     withPluginApi("0.8.31", (api) => {
-      api.onPageChange(() => {
-        api.decorateCooked(($elem) => {
-          $elem.addClass("heti");
-          new Heti(".heti").autoSpacing();
-        });
+      api.decorateCooked(($elem) => {
+        $elem.addClass("heti");
+        new Heti(".heti").autoSpacing();
       });
     });
   },
