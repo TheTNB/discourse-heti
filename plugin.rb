@@ -11,6 +11,7 @@ module ::DiscourseHeti
   PLUGIN_NAME = "discourse-heti"
 end
 
+register_asset "stylesheets/heti.min.css"
 register_asset "stylesheets/heti.scss"
 
 after_initialize do
