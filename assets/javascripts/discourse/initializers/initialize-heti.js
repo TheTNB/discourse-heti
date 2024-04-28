@@ -9,7 +9,11 @@ export default {
     withPluginApi("0.8.31", (api) => {
       api.decorateCooked(($elem) => {
         $elem.addClass("heti");
-        new Heti(".heti").autoSpacing();
+
+        const randomClass = "heti-" + Date.now();
+        $elem.addClass(randomClass);
+
+        new Heti("." + randomClass).autoSpacing();
       });
     });
   },
