@@ -8,12 +8,17 @@ export default {
   initialize() {
     withPluginApi("0.8.31", (api) => {
       api.decorateCooked(($elem) => {
-        $elem.addClass("heti");
+        if (!$elem.hasClass("heti")) {
+          $elem.addClass("heti");
+        }
 
-        const randomClass = "heti-" + Date.now();
-        $elem.addClass(randomClass);
-
-        new Heti("." + randomClass).autoSpacing();
+        if ($elem.hasClass("d-editor-preview")) {
+          new Heti(".d-editor-preview").autoSpacing();
+        } else {
+          const randomClass = "heti-" + Date.now();
+          $elem.addClass(randomClass);
+          new Heti("." + randomClass).autoSpacing();
+        }
       });
     });
   },
