@@ -12,7 +12,6 @@ module ::DiscourseHeti
 end
 
 register_asset "stylesheets/heti.min.css"
-register_asset "stylesheets/heti.scss"
 
 after_initialize do
   # Code which should run after Rails has finished booting
