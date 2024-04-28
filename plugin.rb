@@ -10,9 +10,19 @@
 module ::DiscourseHeti
   PLUGIN_NAME = "discourse-heti"
   SCRIPT_PATH = "/plugins/#{PLUGIN_NAME}/javascripts/heti-addon.min.js"
-  SCRIPT_HASH = Digest::SHA256.hexdigest(File.read("#{Rails.root}/plugins/#{PLUGIN_NAME}/public/javascripts/heti-addon.min.js"))
+  SCRIPT_HASH =
+    Digest::SHA256.hexdigest(
+      File.read(
+        "#{Rails.root}/plugins/#{PLUGIN_NAME}/public/javascripts/heti-addon.min.js",
+      ),
+    )
   STYLESHEET_PATH = "/plugins/#{PLUGIN_NAME}/stylesheets/heti.min.css"
-  STYLESHEET_HASH = Digest::SHA256.hexdigest(File.read("#{Rails.root}/plugins/#{PLUGIN_NAME}/public/stylesheets/heti.min.css"))
+  STYLESHEET_HASH =
+    Digest::SHA256.hexdigest(
+      File.read(
+        "#{Rails.root}/plugins/#{PLUGIN_NAME}/public/stylesheets/heti.min.css",
+      ),
+    )
 end
 
 register_html_builder("server:before-head-close") do |controller|
