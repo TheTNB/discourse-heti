@@ -10,10 +10,12 @@ export default {
         }
 
         if ($elem.hasClass("d-editor-preview")) {
+          /* eslint-disable no-undef */
           new Heti(".d-editor-preview").autoSpacing();
         } else {
           const randomClass = "heti-" + Date.now();
           $elem.addClass(randomClass);
+          /* eslint-disable no-undef */
           new Heti("." + randomClass).autoSpacing();
         }
       });
